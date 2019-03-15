@@ -1,14 +1,15 @@
 #include <stdio.h>
-#define SQR(x) (x) * (x)
+#include <math.h>
+#define SQR(x) (x)*(x)
 
 struct circle {
     float x1, y1, rad1, x2, y2, rad2;
-};
+    };
 
 int main()
 
-{
-    float p1, p2, s1, s2;
+{	
+	float p1, p2, s1, s2, d, R;
     struct circle c;
     printf("Введите координаты окружности: \n");
     printf("Введите координаты по X1 и X2: \n");
@@ -19,27 +20,32 @@ int main()
     scanf("%e", &c.rad1);
     printf("Введите радиус второй окружности: ");
     scanf("%e", &c.rad2);
-
-    p1 = 2 * (3.14) * c.rad1;
+    
+    p1=2 * (3.14) * c.rad1;
     printf("Периметр первого круга : %.2f\n", p1);
-    p2 = 2 * (3.14) * c.rad2;
+    p2=2 * (3.14) * c.rad2;
     printf("Периметр второго круга : %.2f\n", p2);
     s1 = 3.14 * SQR(c.rad1);
     s2 = 3.14 * SQR(c.rad2);
     printf("Площадь первого круга : %.2f\n", s1);
     printf("Площадь второго круга : %.2f\n", s2);
-    d = sqrt(SQR(c.x1 - c.x2) + SQR(c.y1 - c.y2));
+    d = sqrt(SQR(c.x1-c.x2)+SQR(c.y1-c.y2));
     printf("Расстояние между центрами окружностей : %.2f\n", d);
     R = c.rad1 + c.rad2;
     printf("Сумма радиусов равна: %0.2f\n", R);
-
-    if (R == d) {
-        printf("Окружности пересекаются в одной точке\n");
-    } else if (R < d) {
-        printf("Общих точек нет\n");
-    } else if (R > d) {
-        printf("Есть две общие точки\n");
+    
+    if (R == d){
+    	printf("Окружности пересекаются в одной точке\n");
     }
+    	else if (R < d){
+    		printf("Общих точек нет\n");
+    	}
+    		else if (R > d){
+    			printf("Есть две общие точки\n");
+    		}
 
-    return 0;
+
+
+
+return 0;
 }
