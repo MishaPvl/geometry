@@ -2,8 +2,9 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define SQR(x) (x) * (x)
 #define L 200
+#define MAX 1.7Е + 308
+#define MIN 1.7Е - 308
 
 typedef struct circle {
     double x;
@@ -65,10 +66,13 @@ int correct_data_circle(char* figure, Circle* c)
         }
     }
     for (j = 0; figure[i] != ' '; i++, j++) {
-      /*  if ((figure[i] < '0' || figure[i] > '9') && figure[i] != '.') {
-            printf("CoordError\n");
-            return -1;
-        } */
+        if ((figure[i] < '0' || figure[i] > '9' || figure[i] == '-'
+             || figure[i] == '+' || figure[i] == ' ')
+            && figure[i] != '.') {
+            printf("Incorrect coordinates\n");
+            exit(1);
+        }
+
         circle_str_x[j] = figure[i];
     }
 
@@ -76,12 +80,24 @@ int correct_data_circle(char* figure, Circle* c)
     i++;
 
     for (j = 0; figure[i] != ','; i++, j++) {
+        if ((figure[i] < '0' || figure[i] > '9' || figure[i] == '-'
+             || figure[i] == '+' || figure[i] == ' ')
+            && figure[i] != '.') {
+            printf("Incorrect coordinates\n");
+            exit(1);
+        }
         circle_str_y[j] = figure[i];
     }
     i += 2;
     c->y = atof(circle_str_y);
 
     for (j = 0; figure[i] != ')'; i++, j++) {
+        if ((figure[i] < '0' || figure[i] > '9' || figure[i] == '-'
+             || figure[i] == '+' || figure[i] == ' ')
+            && figure[i] != '.') {
+            printf("Incorrect coordinates\n");
+            exit(1);
+        }
         circle_str_rad[j] = figure[i];
     }
     c->rad = atof(circle_str_rad);
