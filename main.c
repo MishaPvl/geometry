@@ -46,8 +46,10 @@ int main()
 
         correct_data_circle(figure, c);
         printf("circle(%.2f %.2f, %.2f)\n", c->x, c->y, c->rad);
-        double pl = 2 * 3.14 * (c->rad);
-        printf("%.2f\n", pl);
+        double pr = 2 * 3.14 * (c->rad);
+        double pl = 3.14 * (c->rad)*(c->rad);
+        printf("Периметр равен : %.2f\n", pr);
+        printf("Площадь равна : %.2f\n", pl);
     }
     fclose(myfile);
     return 0;
