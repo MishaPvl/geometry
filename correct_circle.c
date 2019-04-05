@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include "correct_circle.h"
+#include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>

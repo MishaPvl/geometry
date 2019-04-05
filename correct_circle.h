@@ -23,4 +23,3 @@ char circle_str_rad[L];
 char figure[L];
 
 #endif
-
