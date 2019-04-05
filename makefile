@@ -1,2 +1,2 @@
 all:
-	gcc -Wall -o main correct_circle.c main.c correct_circle.h
+	gcc -Wall -o main.o correct_circle.c main.c correct_circle.h
