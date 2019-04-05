@@ -1,2 +1,2 @@
 all: circle
-	gcc -Wall -o circle circle.c
+	gcc -Wall -o main main.c
