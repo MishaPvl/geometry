@@ -1,2 +1,7 @@
 *.o
 main
+input*
+a.out
+struct*
+geometry
+testing

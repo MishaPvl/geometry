@@ -5,8 +5,12 @@
 #include <stdlib.h>
 #define L 200
 
-int correct_data_circle(char* figure, Circle* c)
+int correct_circle(char* figure, Circle* c)
 {
+    char circle_str_x[L];
+    char circle_str_y[L];
+    char circle_str_rad[L];
+    char figure[L];
     int i = 7;
     int j = 0;
     int k = 0;
@@ -15,7 +19,7 @@ int correct_data_circle(char* figure, Circle* c)
     for (k = 0; circle[k] != '\0'; k++) {
         if (figure[k] != circle[k]) {
             printf("Name Error\n");
-            exit(1);
+            return 1;
         }
     }
     for (j = 0; figure[i] != ' '; i++, j++) {
@@ -23,7 +27,7 @@ int correct_data_circle(char* figure, Circle* c)
              || figure[i] == '+' || figure[i] == ' ')
             && figure[i] != '.') {
             printf("Incorrect coordinates\n");
-            exit(1);
+            return 1;
         }
 
         circle_str_x[j] = figure[i];
@@ -37,7 +41,7 @@ int correct_data_circle(char* figure, Circle* c)
              || figure[i] == '+' || figure[i] == ' ')
             && figure[i] != '.') {
             printf("Incorrect coordinates\n");
-            exit(1);
+            return 1;
         }
         circle_str_y[j] = figure[i];
     }
@@ -49,7 +53,7 @@ int correct_data_circle(char* figure, Circle* c)
              || figure[i] == '+' || figure[i] == ' ')
             && figure[i] != '.') {
             printf("Incorrect coordinates\n");
-            exit(1);
+           return 1;
         }
         circle_str_rad[j] = figure[i];
     }

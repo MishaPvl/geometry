@@ -5,16 +5,6 @@
 #include <stdlib.h>
 #define L 200
 
-/*
-typedef struct triangle {
-    double a1;
-    double a2;
-    double b1;
-    double b2;
-    double r1;
-    double r2;
-    } Triangle;
- */
 
 int main()
 
@@ -27,14 +17,14 @@ int main()
     }
 
     Circle* c = (Circle*)malloc(sizeof(*c));
-    /*Triangle *t = (Triangle *)malloc(sizeof(*t));*/
+
 
     while (!feof(myfile)) {
         fgets(figure, 200, myfile);
         if (feof(myfile))
             break;
 
-        correct_data_circle(figure, c);
+        correct_circle(figure, c);
         printf("circle(%.2f %.2f, %.2f)\n", c->x, c->y, c->rad);
         double pr = 2 * 3.14 * (c->rad);
         double pl = 3.14 * (c->rad) * (c->rad);
