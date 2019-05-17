@@ -35,14 +35,7 @@ CTEST(test, area)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (test, braclet)
-{
-    Circle cir;
-    char string[] = "circle(1.1 1.2, 1.3)\0"; 
-    const int result = circle_coord(string, &cir, 1);
-    const int expected = 3;
-    ASSERT_EQUAL(expected, result);
-}
+
 
 CTEST(test, check_intersection)
 {
