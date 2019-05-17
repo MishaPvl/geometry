@@ -22,7 +22,7 @@ int circle_coord(char* string, Circle* cir, int num)
 
     if (string[6] != '(') {
         printf("%d.Bracket error\n", num);
-        return -1;
+        return 3;
     }
     if (string[7] < '0' || string[7] > '9') {
         printf("%d.X coordinate error\n", num);

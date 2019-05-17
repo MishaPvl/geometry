@@ -9,6 +9,19 @@ int main(int argc, const char** argv)
     return ctest_main(argc, argv);
 }
 
+CTEST(test, name_error)
+{
+    // Given
+    Circle cir;
+    char string[] = "triangle(1.1 1.2, 1.3)\0"; 
+    // When
+    const int result = circle_coord(string, &cir, 1);
+
+    // Then
+    const int expected = 2;
+    ASSERT_EQUAL(expected, result);
+}
+
 CTEST(test, check_intersection)
 {
     // Given
@@ -44,16 +57,17 @@ CTEST(test, area)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST(test, name_error)
+CTEST (test, wrong coord)
 {
-    // Given
+        // Given
     Circle cir;
-    char string[] = "triangle(1.1 1.2, 1.3)\0"; 
+    char string[] = "circle1.1 1.2, 1.3)\0"; 
     // When
     const int result = circle_coord(string, &cir, 1);
 
     // Then
-    const int expected = 2;
+    const int expected = 4;
     ASSERT_EQUAL(expected, result);
 }
+
 
