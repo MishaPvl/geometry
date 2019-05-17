@@ -1,9 +1,9 @@
-language: C
-compiler: gcc
-dist: xenial
+language: c
+
 script:
-- git ls-files src/ | xargs clang-format -i && git diff --exit-code
-- make
-- make test
-- cd bin
-- ./test
+  - make && make run
+  - git ls-files src/ | xargs clang-format -i && git diff --exit-code
+
+compiler: gcc
+
+dist: xenial
