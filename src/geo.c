@@ -80,13 +80,13 @@ void print_circle(Circle* cir, int v)
                (cir + number)->x,
                (cir + number)->y,
                (cir + number)->r);
-        printf("\tPerimeter = %.3f\n", circle_perimeter(cir, number));
-        printf("\tArea = %.3f\n", circle_area(cir, number));
-        printf("\tIntersection: \n");
+        printf("Perimeter = %.3f\n", circle_perimeter(cir, number));
+        printf("Area = %.3f\n", circle_area(cir, number));
+        printf("Intersection: \n");
         for (int j = 1; j < v; j++) {
             inter = circle_intersection(cir, number, j);
             if (inter) {
-                printf("\t\t%d. circle\n", (cir + j)->num);
+                printf("\t%d. circle\n", (cir + j)->num);
             }
         }
     }
@@ -102,7 +102,7 @@ double circle_area(Circle* cir, int number)
     return (cir + number)->r * (cir + number)->r * M_PI;
 }
 
-void circle_intersection(Circle* cir, int number, int j)
+int circle_intersection(Circle* cir, int number, int j)
 {
     double t;
     t
