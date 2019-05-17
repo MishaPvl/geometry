@@ -19,7 +19,7 @@ CTEST(test, check_intersection_false)
     cir[0].num = 0;
     cir[1].x = 2.1;
     cir[1].y = 2.2;
-    cir[1].r = 0.1;
+    cir[1].r = 0.2;
     cir[1].num = 1;
 
     // When
