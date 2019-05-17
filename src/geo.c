@@ -12,7 +12,7 @@ int circle_coord(char* string, Circle* cir, int num)
     for (int i = 0; circle[i] != '\0'; i++) {
         if (string[i] != circle[i]) {
             printf("%d.Name error\n", num);
-            return -1;
+            return 2;
         }
     }
 

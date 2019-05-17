@@ -29,20 +29,20 @@ CTEST(test, check_intersection_false)
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
-/*
+
 CTEST(test, perimeter)
 {
     // Given
-    Crcl in = {1.1, 1.2, 1.3, 0};
+     char string[] = "triangle(1.1 1.2, 1.3)\0";
 
     // When
-    const int result = perimetr(&in, 0);
+    const int result = circle_coord(string, &cir, 1)
 
     // Then
-    const int expected = 8.168141;
+    const int expected = 2
     ASSERT_EQUAL(expected, result);
 }
-
+/*
 CTEST(test, area)
 {
     // Given
