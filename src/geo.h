@@ -1,5 +1,5 @@
-#ifndef GEOMETRY_H
-#define GEOMETRY_H
+#ifndef GEO_H
+#define GEO_H
 
 #define N 200
 

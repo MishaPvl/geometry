@@ -1,7 +1,7 @@
 #define CTEST_MAIN
 #define CTEST_COLOR_OK
 
-#include <crcl.h>
+#include <geo.h>
 #include <ctest.h>
 
 int main(int argc, const char** argv)
@@ -9,7 +9,28 @@ int main(int argc, const char** argv)
     return ctest_main(argc, argv);
 }
 
-CTEST(test, perimetr)
+CTEST(test, check_intersection_false)
+{
+    // Given
+    Circle cir[2];
+    cir[0].x = 1.1;
+    cir[0].y = 1.2;
+    cir[0].r = 1.3;
+    cir[0].ind = 0;
+    cir[1].x = 2.1;
+    cir[1].y = 2.2;
+    cir[1].r = 0.1;
+    cir[1].ind = 1;
+
+    // When
+    const int result = circle_intersection(in, 0, 1);
+
+    // Then
+    const int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+/*
+CTEST(test, perimeter)
 {
     // Given
     Crcl in = {1.1, 1.2, 1.3, 0};
@@ -56,23 +77,4 @@ CTEST(test, check_intersection_true)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST(test, check_intersection_false)
-{
-    // Given
-    Crcl in[2];
-    in[0].x = 1.1;
-    in[0].y = 1.2;
-    in[0].r = 1.3;
-    in[0].ind = 0;
-    in[1].x = 2.1;
-    in[1].y = 2.2;
-    in[1].r = 0.1;
-    in[1].ind = 1;
-
-    // When
-    const int result = intersection(in, 0, 1);
-
-    // Then
-    const int expected = 0;
-    ASSERT_EQUAL(expected, result);
-}
+*/
