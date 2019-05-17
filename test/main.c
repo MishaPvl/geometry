@@ -66,7 +66,7 @@ CTEST (test, wrong_coord)
     const int result = circle_coord(string, &cir, 1);
 
     // Then
-    const int expected = 4;
+    const int expected = 3;
     ASSERT_EQUAL(expected, result);
 }
 
