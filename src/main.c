@@ -6,7 +6,7 @@
 
 int main()
 {
-    char figure[N]; //c
+    char figure[N]; // c
 
     FILE* coord;
     coord = fopen("coord.txt", "r");

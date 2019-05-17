@@ -7,9 +7,8 @@
 
 int circle_coord(char* string, Circle* cir, int num)
 {
-
     char circle[7] = {'c', 'i', 'r', 'c', 'l', 'e', '\0'};
-    
+
     for (int i = 0; circle[i] != '\0'; i++) {
         if (string[i] != circle[i]) {
             printf("%d.Name error\n", num);

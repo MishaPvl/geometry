@@ -1,8 +1,8 @@
 #define CTEST_MAIN
 #define CTEST_COLOR_OK
 
-#include <geo.h>
 #include <ctest.h>
+#include <geo.h>
 
 int main(int argc, const char** argv)
 {
@@ -26,7 +26,7 @@ CTEST(test, check_intersection_false)
     const int result = circle_intersection(cir, 0, 1);
 
     // Then
-    const int expected = 0;
+    const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
 /*
