@@ -44,7 +44,7 @@ CTEST(test, area)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST(test, name error)
+CTEST(test, name_error)
 {
     // Given
     Circle cir;
