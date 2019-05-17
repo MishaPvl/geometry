@@ -1,36 +1,41 @@
-#include "correct_circle.h"
-#include <ctype.h>
+#include "geometry.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define L 200
-
+#include <string.h>
 
 int main()
-
 {
-    FILE* myfile;
-    myfile = fopen("geometry.txt", "r");
-    if (myfile == NULL) {
+    char figure[N]; //c
+
+    FILE* coord;
+    coord = fopen("coord.txt", "r");
+
+    if (coord == NULL) {
         printf("File not found\n");
-        return 1;
+        return -1;
     }
 
-    Circle* c = (Circle*)malloc(sizeof(*c));
+    Circle* cir = (Circle*)malloc(sizeof(Circle) * N);
 
+    int fl = 0;
 
-    while (!feof(myfile)) {
-        fgets(figure, 200, myfile);
-        if (feof(myfile))
-            break;
+    while (!feof(coord)) {
+        fgets(figure, N, coord);
+        if (strcmp(figure, "\n\0") == 0) {
+            continue;
+        }
 
-        correct_circle(figure, c);
-        printf("circle(%.2f %.2f, %.2f)\n", c->x, c->y, c->rad);
-        double pr = 2 * 3.14 * (c->rad);
-        double pl = 3.14 * (c->rad) * (c->rad);
-        printf("Периметр равен : %.2f\n", pr);
-        printf("Площадь равна : %.2f\n", pl);
+        fl++;
+        (cir + fl)->num = fl;
+
+        if (circle_coord(figure, cir, fl) == -1) {
+            fl--;
+            continue;
+        }
     }
-    fclose(myfile);
+    circle(cir, fl);
+    fclose(coord);
+
     return 0;
 }
