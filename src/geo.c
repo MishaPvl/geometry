@@ -110,7 +110,7 @@ void circle_intersection(Circle* cir, int number, int j)
                    + (double)pow((cir + number)->y - (cir + j)->y, 2.00));
     if (t < (cir + number)->r + (cir + j)->r && (cir + number)->r < t + (cir + j)->r
         && (cir + j)->r < t + (cir + number)->r) {
-        printf()
+        return 1;
     }
     return 0;
 }
