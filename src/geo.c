@@ -71,20 +71,20 @@ int circle_coord(char* string, Circle* cir, int num)
     return 0;
 }
 
-void circle(Circle* cir, int v)
+void print_circle(Circle* cir, int v)
 {
     int inter;
-    for (int i = 1; i < v; i++) {
+    for (int number = 1; number < v; number++) {
         printf("%d.circle(%.2f %.2f, %.2f)\n",
-               (cir + i)->num,
-               (cir + i)->x,
-               (cir + i)->y,
-               (cir + i)->r);
-        printf("\tPerimeter = %.3f\n", circle_perimeter(cir, i));
-        printf("\tArea = %.3f\n", circle_area(cir, i));
+               (cir + number)->num,
+               (cir + number)->x,
+               (cir + number)->y,
+               (cir + number)->r);
+        printf("\tPerimeter = %.3f\n", circle_perimeter(cir, number));
+        printf("\tArea = %.3f\n", circle_area(cir, number));
         printf("\tIntersection: \n");
         for (int j = 1; j < v; j++) {
-            inter = circle_intersection(cir, i, j);
+            inter = circle_intersection(cir, number, j);
             if (inter) {
                 printf("\t\t%d. circle\n", (cir + j)->num);
             }
@@ -92,25 +92,25 @@ void circle(Circle* cir, int v)
     }
 }
 
-double circle_perimeter(Circle* cir, int i)
+double circle_perimeter(Circle* cir, int number)
 {
-    return (cir + i)->r * 2 * M_PI;
+    return (cir + number)->r * 2 * M_PI;
 }
 
-double circle_area(Circle* cir, int i)
+double circle_area(Circle* cir, int number)
 {
-    return (cir + i)->r * (cir + i)->r * M_PI;
+    return (cir + number)->r * (cir + number)->r * M_PI;
 }
 
-int circle_intersection(Circle* cir, int i, int j)
+void circle_intersection(Circle* cir, int number, int j)
 {
     double t;
     t
-            = sqrt((double)pow((cir + i)->x - (cir + j)->x, 2.00)
-                   + (double)pow((cir + i)->y - (cir + j)->y, 2.00));
-    if (t < (cir + i)->r + (cir + j)->r && (cir + i)->r < t + (cir + j)->r
-        && (cir + j)->r < t + (cir + i)->r) {
-        return 1;
+            = sqrt((double)pow((cir + number)->x - (cir + j)->x, 2.00)
+                   + (double)pow((cir + number)->y - (cir + j)->y, 2.00));
+    if (t < (cir + number)->r + (cir + j)->r && (cir + number)->r < t + (cir + j)->r
+        && (cir + j)->r < t + (cir + number)->r) {
+        printf()
     }
     return 0;
 }

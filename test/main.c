@@ -22,6 +22,33 @@ CTEST(test, name_error)
     ASSERT_EQUAL(expected, result);
 }
 
+
+CTEST(test, area)
+{
+    // Given
+    Circle cir = {1.1, 1.2, 1.3, 0};
+
+    // When
+    const int result = circle_area(&cir, 0);
+
+    // Then
+    const int expected = 5.309292;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST (test, braclet)
+{
+        // Given
+    Circle cir;
+    char string[] = "circle(1.1 1.2, 1.3)\0"; 
+    // When
+    const int result = circle_coord(string, &cir, 1);
+
+    // Then
+    const int expected = 3;
+    ASSERT_EQUAL(expected, result);
+}
+
 CTEST(test, check_intersection)
 {
     // Given
@@ -42,32 +69,4 @@ CTEST(test, check_intersection)
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
-
-
-CTEST(test, area)
-{
-    // Given
-    Circle cir = {1.1, 1.2, 1.3, 0};
-
-    // When
-    const int result = circle_area(&cir, 0);
-
-    // Then
-    const int expected = 5.309292;
-    ASSERT_EQUAL(expected, result);
-}
-
-CTEST (test, wrong_coord)
-{
-        // Given
-    Circle cir;
-    char string[] = "circle1.1 1.2, 1.3)\0"; 
-    // When
-    const int result = circle_coord(string, &cir, 1);
-
-    // Then
-    const int expected = 3;
-    ASSERT_EQUAL(expected, result);
-}
-
 

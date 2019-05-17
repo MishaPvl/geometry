@@ -11,7 +11,7 @@ typedef struct {
     int num;
 } Circle;
 
-void circle(Circle* cir, int col);
+void print_circle(Circle* cir, int col);
 int circle_coord(char* c, Circle* cir, int num);
 double circle_perimeter(Circle* cir, int i);
 double circle_area(Circle* cir, int i);

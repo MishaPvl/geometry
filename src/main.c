@@ -34,7 +34,7 @@ int main()
             continue;
         }
     }
-    circle(cir, fl);
+    print_circle(cir, fl);
     fclose(coord);
 
     return 0;
