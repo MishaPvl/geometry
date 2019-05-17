@@ -50,7 +50,7 @@ CTEST(test, name_error)
     Circle cir;
     char string[] = "triangle(1.1 1.2, 1.3)\0"; 
     // When
-    const int result = circle_coord(string, &cir, 1)
+    const int result = circle_coord(string, &cir, 1);
 
     // Then
     const int expected = 2;
