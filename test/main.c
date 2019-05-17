@@ -48,7 +48,7 @@ CTEST(test, name_error)
 {
     // Given
     Circle cir;
-    char str[] = "triangle(1.1 1.2, 1.3)\0"; 
+    char string[] = "triangle(1.1 1.2, 1.3)\0"; 
     // When
     const int result = circle_coord(string, &cir, 1)
 
