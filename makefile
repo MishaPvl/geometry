@@ -11,3 +11,7 @@ build/src/main.o: src/main.c
 
 build/src/circle.o: src/geometry.c
 	gcc -Wall -Werror -c src/geometry.c -o build/src/circle.o
+
+clean:
+	rm -rf build/src/*.o bin/geometry
+	rm -rf build/test/*.o bin/test
