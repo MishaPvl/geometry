@@ -30,51 +30,18 @@ CTEST(test, check_intersection_false)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST(test, perimeter)
-{
-    // Given
-     char string[] = "triangle(1.1 1.2, 1.3)\0";
 
-    // When
-    const int result = circle_coord(string, 1, 1);
-
-    // Then
-    const int expected = 2
-    ASSERT_EQUAL(expected, result);
-}
-/*
 CTEST(test, area)
 {
     // Given
-    Crcl in = {1.1, 1.2, 1.3, 0};
+    Circle cir = {1.1, 1.2, 1.3, 0};
 
     // When
-    const int result = area(&in, 0);
+    const int result = circle_area(&cir, 0);
 
     // Then
     const int expected = 5.309292;
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST(test, check_intersection_true)
-{
-    // Given
-    Crcl in[2];
-    in[0].x = 1.1;
-    in[0].y = 1.2;
-    in[0].r = 1.3;
-    in[0].ind = 0;
-    in[1].x = 2.1;
-    in[1].y = 2.2;
-    in[1].r = 2.3;
-    in[1].ind = 1;
 
-    // When
-    const int result = intersection(in, 0, 1);
-
-    // Then
-    const int expected = 1;
-    ASSERT_EQUAL(expected, result);
-}
-
-*/
