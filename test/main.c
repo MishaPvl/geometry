@@ -16,14 +16,14 @@ CTEST(test, check_intersection_false)
     cir[0].x = 1.1;
     cir[0].y = 1.2;
     cir[0].r = 1.3;
-    cir[0].ind = 0;
+    cir[0].num = 0;
     cir[1].x = 2.1;
     cir[1].y = 2.2;
     cir[1].r = 0.1;
-    cir[1].ind = 1;
+    cir[1].num = 1;
 
     // When
-    const int result = circle_intersection(in, 0, 1);
+    const int result = circle_intersection(cir, 0, 1);
 
     // Then
     const int expected = 0;
