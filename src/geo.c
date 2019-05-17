@@ -104,13 +104,13 @@ double circle_area(Circle* cir, int number)
 
 int circle_intersection(Circle* cir, int number, int j)
 {
-    double t;
-    t
+    double intsec;
+    intsec
             = sqrt((double)pow((cir + number)->x - (cir + j)->x, 2.00)
                    + (double)pow((cir + number)->y - (cir + j)->y, 2.00));
-    if (t < (cir + number)->r + (cir + j)->r
-        && (cir + number)->r < t + (cir + j)->r
-        && (cir + j)->r < t + (cir + number)->r) {
+    if (intsec < (cir + number)->r + (cir + j)->r
+        && (cir + number)->r < intsec + (cir + j)->r
+        && (cir + j)->r < intsec + (cir + number)->r) {
         return 1;
     }
     return 0;
